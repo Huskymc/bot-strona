@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft AFK Bot Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+                <div class="position-sticky pt-3">
+                    <h4 class="text-white text-center mb-4">
+                        <i class="fas fa-cube"></i> MC Bot
+                    </h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" href="#dashboard">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#settings">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#logs">
+                                <i class="fas fa-file-alt"></i> Logs
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Minecraft AFK Bot Dashboard</h1>
+                </div>
+
+                <!-- Error Alert -->
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> Service Unavailable</h4>
+                    <p>This Minecraft AFK bot cannot be implemented with the current environment constraints:</p>
+                    <ul>
+                        <li>Minecraft protocol libraries (mineflayer, minecraft-protocol) are not available</li>
+                        <li>24/7 hosting infrastructure is not supported</li>
+                        <li>Specialized Minecraft authentication systems are required</li>
+                        <li>Network protocol handling tools are missing</li>
+                    </ul>
+                    <hr>
+                    <p class="mb-0">This dashboard represents what the interface would look like if proper Minecraft bot libraries were available.</p>
+                </div>
+
+                <!-- Bot Status Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card text-white bg-secondary">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-power-off fa-2x me-3"></i>
+                                    <div>
+                                        <h5 class="card-title">Status</h5>
+                                        <p class="card-text">Offline</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-secondary">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-clock fa-2x me-3"></i>
+                                    <div>
+                                        <h5 class="card-title">Uptime</h5>
+                                        <p class="card-text">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-secondary">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-server fa-2x me-3"></i>
+                                    <div>
+                                        <h5 class="card-title">Server</h5>
+                                        <p class="card-text">warsmp</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-secondary">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-users fa-2x me-3"></i>
+                                    <div>
+                                        <h5 class="card-title">Players</h5>
+                                        <p class="card-text">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bot Control Panel -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-gamepad"></i> Bot Control Panel</h5>
+                            </div>
+                            <div class="card-body bot-control-section">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <h6><span class="status-indicator offline"></span>Connection Control</h6>
+                                        <button type="button" class="btn btn-success w-100 mb-2" disabled>
+                                            <i class="fas fa-play"></i> Start Bot
+                                        </button>
+                                        <button type="button" class="btn btn-warning w-100 mb-2" disabled>
+                                            <i class="fas fa-pause"></i> Pause Bot
+                                        </button>
+                                        <button type="button" class="btn btn-danger w-100" disabled>
+                                            <i class="fas fa-stop"></i> Stop Bot
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <h6>Bot Actions</h6>
+                                        <button type="button" class="btn btn-info w-100 mb-2" disabled>
+                                            <i class="fas fa-redo"></i> Reconnect
+                                        </button>
+                                        <button type="button" class="btn btn-secondary w-100 mb-2" disabled>
+                                            <i class="fas fa-sync"></i> Refresh Status
+                                        </button>
+                                        <button type="button" class="btn btn-primary w-100" disabled>
+                                            <i class="fas fa-terminal"></i> Send Command
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <h6>Quick Commands</h6>
+                                        <button type="button" class="btn btn-outline-primary w-100 mb-2" disabled>
+                                            <i class="fas fa-server"></i> Join Server
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary w-100 mb-2" disabled>
+                                            <i class="fas fa-home"></i> Go to Spawn
+                                        </button>
+                                        <button type="button" class="btn btn-outline-warning w-100" disabled>
+                                            <i class="fas fa-clock"></i> AFK Mode
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quick Command Input -->
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="quickCommand" placeholder="Enter command (e.g., /server warsmp)" disabled>
+                                            <button class="btn btn-primary" type="button" id="sendQuickCommand" disabled>
+                                                <i class="fas fa-paper-plane"></i> Send
+                                            </button>
+                                        </div>
+                                        <small class="text-muted">All bot control features are currently unavailable due to missing Minecraft libraries</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Configuration Form -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-cog"></i> Bot Configuration</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="botConfig">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Minecraft Username</label>
+                                        <input type="text" class="form-control" id="username" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="server" class="form-label">Server Address</label>
+                                        <input type="text" class="form-control" id="server" value="warsmp" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="authType" class="form-label">Authentication</label>
+                                        <select class="form-select" id="authType">
+                                            <option value="limboauth">LimboAuth</option>
+                                            <option value="microsoft">Microsoft</option>
+                                            <option value="offline">Offline Mode</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="command" class="form-label">Auto Command on Login</label>
+                                        <input type="text" class="form-control" id="command" placeholder="/server warsmp" value="/server warsmp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="autoReconnect" checked disabled>
+                                            <label class="form-check-label" for="autoReconnect">
+                                                Auto-reconnect if disconnected
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="afkMode" checked disabled>
+                                            <label class="form-check-label" for="afkMode">
+                                                Enable 24/7 AFK mode
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="configName" placeholder="Configuration name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="button" class="btn btn-success" id="saveConfigBtn">
+                                                <i class="fas fa-save"></i> Save Online
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h5><i class="fas fa-cloud"></i> Saved Configurations</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-2">
+                                    <div class="col-md-8">
+                                        <select class="form-select" id="savedConfigs">
+                                            <option value="">Select a saved configuration...</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary btn-sm w-100" id="loadConfigBtn">
+                                            <i class="fas fa-download"></i> Load
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <button type="button" class="btn btn-info btn-sm" id="refreshConfigsBtn">
+                                            <i class="fas fa-sync"></i> Refresh List
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-danger btn-sm w-100" id="deleteConfigBtn">
+                                            <i class="fas fa-trash"></i> Delete
+                                        </button>
+                                    </div>
+                                </div>
+                                <small class="text-muted mt-2">Configurations are saved online and accessible from any device</small>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-terminal"></i> Console Output</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="console" class="console-output">
+                                    <div class="console-line error">ERROR: Minecraft protocol libraries not available</div>
+                                    <div class="console-line error">ERROR: Cannot establish connection to Minecraft server</div>
+                                    <div class="console-line">INFO: Required dependencies missing:</div>
+                                    <div class="console-line">  - mineflayer (Node.js)</div>
+                                    <div class="console-line">  - minecraft-protocol</div>
+                                    <div class="console-line">  - 24/7 hosting environment</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requirements Section -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-exclamation-circle"></i> Implementation Requirements</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>To implement a working Minecraft AFK bot, the following would be required:</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Required Libraries:</h6>
+                                        <ul>
+                                            <li><code>mineflayer</code> - Minecraft bot framework</li>
+                                            <li><code>minecraft-protocol</code> - Protocol handling</li>
+                                            <li><code>prismarine-auth</code> - Authentication</li>
+                                            <li><code>prismarine-chat</code> - Chat handling</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>Infrastructure:</h6>
+                                        <ul>
+                                            <li>24/7 hosting environment</li>
+                                            <li>Reliable internet connection</li>
+                                            <li>Process monitoring (PM2, systemd)</li>
+                                            <li>Error logging and recovery</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

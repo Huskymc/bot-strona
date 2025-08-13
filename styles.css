@@ -1,0 +1,224 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, .75);
+    transition: color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+main {
+    padding-top: 20px;
+}
+
+.console-output {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    height: 300px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.console-line {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.console-line.error {
+    color: #ff6b6b;
+}
+
+.console-line.warning {
+    color: #feca57;
+}
+
+.console-line.success {
+    color: #48dbfb;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    font-weight: 600;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.alert-danger {
+    border-left: 4px solid #dc3545;
+}
+
+/* Status indicators */
+.status-online {
+    color: #28a745 !important;
+}
+
+.status-offline {
+    color: #dc3545 !important;
+}
+
+.status-connecting {
+    color: #ffc107 !important;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Bot Control Panel Styles */
+.bot-control-section h6 {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.bot-control-section .btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.bot-control-section .btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.bot-control-section .btn-success:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.bot-control-section .btn-warning:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.bot-control-section .btn-danger:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.bot-control-section .btn-info:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.bot-control-section .btn-outline-primary:disabled,
+.bot-control-section .btn-outline-secondary:disabled,
+.bot-control-section .btn-outline-warning:disabled {
+    color: #6c757d;
+    border-color: #6c757d;
+    background-color: transparent;
+}
+
+.input-group .form-control:disabled {
+    background-color: #f8f9fa;
+    opacity: 0.8;
+}
+
+.bot-control-panel {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Status indicator improvements */
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-indicator.offline {
+    background-color: #dc3545;
+    animation: none;
+}
+
+.status-indicator.online {
+    background-color: #28a745;
+    animation: pulse-green 2s infinite;
+}
+
+.status-indicator.connecting {
+    background-color: #ffc107;
+    animation: pulse-yellow 1.5s infinite;
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+@keyframes pulse-yellow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        height: auto;
+    }
+    
+    main {
+        padding-left: 0;
+    }
+    
+    .bot-control-section .btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    
+    .bot-control-section h6 {
+        font-size: 16px;
+    }
+}
